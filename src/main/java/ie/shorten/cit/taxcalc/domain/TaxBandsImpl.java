@@ -15,13 +15,13 @@ public class TaxBandsImpl implements TaxBands {
 	@Override
 	public void set_exempt_limit(double exempt_limit) {
 		// TODO Auto-generated method stub
-		
+		this.exempt_limit = exempt_limit;
 	}
 	
 	@Override
 	public double get_exempt_limit() {
 		// TODO Auto-generated method stub
-		return 0;
+		return exempt_limit;
 	}
 
 	@Override
@@ -46,30 +46,6 @@ public class TaxBandsImpl implements TaxBands {
 	public double get_lower_rate() {
 		// TODO Auto-generated method stub
 		return lower_rate;
-	}
-
-	@Override
-	public void set_middle_limit(double middle_limit) {
-		// TODO Auto-generated method stub
-		this.middle_limit = middle_limit;
-	}
-
-	@Override
-	public double get_middle_limit() {
-		// TODO Auto-generated method stub
-		return middle_limit;
-	}
-	
-	@Override
-	public void set_middle_rate(double middle_rate) {
-		// TODO Auto-generated method stub
-		this.middle_rate = middle_rate;
-	}
-
-	@Override
-	public double get_middle_rate() {
-		// TODO Auto-generated method stub
-		return middle_rate;
 	}
 
 	@Override
