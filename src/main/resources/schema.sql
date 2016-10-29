@@ -3,8 +3,6 @@ CREATE TABLE  tax_bands(
 	excempt_tax_limit float,
 	lower_tax_rate float,
 	lower_tax_limit float,
-	middle_tax_rate float,
-	middle_tax_limit float,
 	higher_tax_rate float,
 	solidary_tax_rate float,
 	PRIMARY KEY(tax_rate_id)
