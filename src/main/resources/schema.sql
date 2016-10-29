@@ -4,7 +4,7 @@ CREATE TABLE  tax_bands(
 	lower_tax_rate float,
 	lower_tax_limit float,
 	higher_tax_rate float,
-	solidary_tax_rate float,
+	solitary_tax_rate float,
 	PRIMARY KEY(tax_rate_id)
 );
 
