@@ -1,7 +1,5 @@
 CREATE TABLE  tax_bands(
-	tax_rate_name VARCHAR(100) NOT NULL,
-	tax_rate_percentage FLOAT NOT_NULL,
-	PRIMARY KEY(tax_rate_name)
+	
 );
 
 CREATE TABLE citizens(
