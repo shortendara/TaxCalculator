@@ -7,8 +7,6 @@ public class TaxBandsImpl implements TaxBands {
 	private double exempt_limit;
 	private double lower_limit;
 	private double lower_rate;
-	private double middle_limit;
-	private double middle_rate;
 	private double higher_rate;
 	private double solitary_rate;
 	
