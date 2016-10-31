@@ -6,7 +6,7 @@ public class CitizenImpl implements Citizen {
 
 	private String name;
 	private double salary;
-
+	private int id;
 	@Override
 	public void set_name(String name) {
 		// TODO Auto-generated method stub
@@ -19,6 +19,7 @@ public class CitizenImpl implements Citizen {
 		return name;
 	}
 
+
 	@Override
 	public void set_salary(double salary) {
 		// TODO Auto-generated method stub
@@ -29,6 +30,18 @@ public class CitizenImpl implements Citizen {
 	public double get_salary() {
 		// TODO Auto-generated method stub
 		return salary;
+	}
+
+	@Override
+	public void set_id(int id) {
+		// TODO Auto-generated method stub
+		this.id = id;
+	}
+
+	@Override
+	public int get_id() {
+		// TODO Auto-generated method stub
+		return id;
 	}
 
 }

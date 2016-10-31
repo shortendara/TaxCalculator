@@ -6,6 +6,9 @@ public interface Citizen {
 	
 	public String get_name();
 
+	public void set_id(int id);
+	
+	public int get_id();
 	
 	public void set_salary(double salary);
 	
