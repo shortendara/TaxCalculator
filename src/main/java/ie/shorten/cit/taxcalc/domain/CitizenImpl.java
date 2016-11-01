@@ -7,6 +7,17 @@ public class CitizenImpl implements Citizen {
 	private String name;
 	private double salary;
 	private int id;
+	
+	public CitizenImpl(){
+		
+	}
+	
+	public CitizenImpl(String name, double salary){
+		set_name(name);
+		set_salary(salary);
+		//Citizen id automatically set to 0 for each new citizen database increments the id number
+		set_id(0);
+	}
 	@Override
 	public void set_name(String name) {
 		// TODO Auto-generated method stub

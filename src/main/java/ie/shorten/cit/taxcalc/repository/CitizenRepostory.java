@@ -29,6 +29,7 @@ public class CitizenRepostory implements CitizenRepository{
 	public void save(Citizen citizen) {
 		// TODO Auto-generated method stub
 		if(citizen.get_id() != 0){
+			System.out.println("Updating citizen");
 			update(citizen);
 		}else{
 			insert(citizen);
@@ -38,11 +39,13 @@ public class CitizenRepostory implements CitizenRepository{
 	private void update(Citizen citizen){
 		String sql = "UPDATE citizens SET name = ?, SET salary = ? WHERE id = ?";
 		jdbc_template.update(sql, new Object[]{ citizen.get_name(), citizen.get_salary(), citizen.get_id()});
+		System.out.println("INserted citizen");
 	}
 	
 	private void insert(Citizen citezen){
 		String sql = "INSERT INTO citizens(name, salary) VALUES(?, ?)";
 		jdbc_template.update(sql, new Object[]{citezen.get_name(), citezen.get_salary()});
+		System.out.println("INserted citizen");
 	}
 
 	@Override
@@ -56,8 +59,8 @@ public class CitizenRepostory implements CitizenRepository{
 	public List<Citizen> find_all() {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM citizens";
-		jdbc_template.query(sql, new CitizenRowMapper());
-		return null;
+		List<Citizen> = jdbc_template.query(sql, new CitizenRowMapper());
+		
 	}
 
 }
