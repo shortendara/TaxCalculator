@@ -1,6 +1,7 @@
 package ie.shorten.cit.taxcalc.repository;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,7 @@ public class CitizenRepostory implements CitizenRepository{
 
 	private JdbcTemplate jdbc_template;
 	
+	@Autowired
 	public CitizenRepostory(JdbcTemplate jdbc_template){
 		this.jdbc_template = jdbc_template;
 	}
