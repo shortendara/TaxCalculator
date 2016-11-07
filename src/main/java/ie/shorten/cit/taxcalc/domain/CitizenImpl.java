@@ -70,14 +70,14 @@ public class CitizenImpl implements Citizen {
 			remaining_pay = (remaining_pay - 10000);
 			//Calculate tax deducted on pay less then 25000
 			if(remaining_pay <= 15000){
-				tax_deducted = (remaining_pay * 0.8);
-				take_home_pay = (salary - tax_deducted);
+				//Calculate salary @20% tax
+				remaining_pay = (remaining_pay * 0.8);
+				//Calculate solidarity tax
+				tax_deducted = (salary * 0.03);
+				take_home_pay = (remaining_pay - tax_deducted);
 			}else{
-				//Calculate 20 tax deduction for next 15000
-				tax_deducted = (15000 * 0.8);
-				remaining_pay = (remaining_pay - 15000);
+				
 			}
-			
 		}
 	}
 
