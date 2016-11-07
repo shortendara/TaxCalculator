@@ -13,4 +13,8 @@ public interface Citizen {
 	public void set_salary(double salary);
 	
 	public double get_salary();
+	
+	public void set_take_home_pay(double salary);
+	
+	public double get_take_home_pay();
 }

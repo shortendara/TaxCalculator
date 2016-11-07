@@ -6,6 +6,7 @@ public class CitizenImpl implements Citizen {
 
 	private String name;
 	private double salary;
+	private double take_home_pay;
 	private int id;
 	
 	public CitizenImpl(){
@@ -34,6 +35,7 @@ public class CitizenImpl implements Citizen {
 	@Override
 	public void set_salary(double salary) {
 		// TODO Auto-generated method stub
+		set_take_home_pay(salary);
 		this.salary = salary;
 	}
 
@@ -53,6 +55,36 @@ public class CitizenImpl implements Citizen {
 	public int get_id() {
 		// TODO Auto-generated method stub
 		return id;
+	}
+
+	@Override
+	public void set_take_home_pay(double salary) {
+		// TODO Auto-generated method stub
+		double remaining_pay = salary;
+		double tax_deducted = 0;
+		if(salary <= 10000){
+			//For salary below 10000 apply solidarity tax
+			take_home_pay = (salary * 0.97);
+		}else{
+			//First 10000 exempt from tax
+			remaining_pay = (remaining_pay - 10000);
+			//Calculate tax deducted on pay less then 25000
+			if(remaining_pay <= 15000){
+				tax_deducted = (remaining_pay * 0.8);
+				take_home_pay = (salary - tax_deducted);
+			}else{
+				//Calculate 20 tax deduction for next 15000
+				tax_deducted = (15000 * 0.8);
+				remaining_pay = (remaining_pay - 15000);
+			}
+			
+		}
+	}
+
+	@Override
+	public double get_take_home_pay() {
+		// TODO Auto-generated method stub
+		return take_home_pay;
 	}
 
 }
