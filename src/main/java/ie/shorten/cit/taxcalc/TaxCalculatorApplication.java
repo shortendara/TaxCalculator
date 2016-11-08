@@ -17,6 +17,10 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 
 	@Autowired
 	CitizenService citizen_service;
+	
+	@Autowired
+	TaxBandsService tax_bands_service;
+	
 	Scanner kb;
 	public void list_all_citizens(){
 		List<Citizen> citizen_list = citizen_service.find_all();
@@ -45,10 +49,11 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 		System.out.println("5.  Change higher tax rate");
 		System.out.println("6.  Change solitory tax rate");
 		int choice = kb.nextInt();
-	}
-	
-	public void change_exempt_limit(){
+		switch(choice){
+			case 1:
+				
 		
+		}
 	}
 	
 	public void menu(){
