@@ -35,8 +35,13 @@ public class CitizenImpl implements Citizen {
 	@Override
 	public void set_salary(double salary) {
 		// TODO Auto-generated method stub
-		set_take_home_pay(salary);
+		calculate_take_home_pay(salary);
 		this.salary = salary;
+	}
+
+	private void calculate_take_home_pay(double salary) {
+		// TODO Auto-generated method stub
+		double remaining_pay = salary;
 	}
 
 	@Override

@@ -47,8 +47,8 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 		
 		System.out.println("1.  List all tax rates");
 		System.out.println("2.  Change exempt limit");
-		System.out.println("3.  Change lower limit");
-		System.out.println("4.  Change lower tax rate");
+		System.out.println("3.  Change lower tax rate");
+		System.out.println("4.  Change lower limit");
 		System.out.println("5.  Change higher tax rate");
 		System.out.println("6.  Change solitory tax rate");
 		int choice = kb.nextInt();
