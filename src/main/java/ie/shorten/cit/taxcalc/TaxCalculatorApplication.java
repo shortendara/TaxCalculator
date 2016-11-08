@@ -51,8 +51,15 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 		int choice = kb.nextInt();
 		switch(choice){
 			case 1:
-				
-		
+				List<TaxBands> tax_bands = tax_bands_service.list_all();
+				for(TaxBands tax_band : tax_bands){
+					System.out.println("Exempt limit: " + tax_band.get_exempt_limit());
+					System.out.println("Lower limit: " + tax_band.get_lower_limit());
+					System.out.println("Lower tax rate: " + tax_band.get_lower_rate());
+					System.out.println("Higher tax rate: " + tax_band.get_higher_rate());
+					System.out.println("Solitary tax rate: " + tax_band.get_solitary_rate());
+				}
+				break;
 		}
 	}
 	
