@@ -35,7 +35,7 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 		System.out.println("Enter Citizen name: ");
 		String name = kb.next();
 		System.out.println("Enter citizen salary: ");
-		double salary = 0.0;
+		double salary = kb.nextDouble();
 		Citizen citizen = new CitizenImpl(name, salary);
 		
 		//Use service class to add citizen to database
@@ -43,6 +43,8 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 	}
 	
 	public void change_rates(){
+		TaxBands tax_bands = new TaxBandsImpl();
+		
 		System.out.println("1.  List all tax rates");
 		System.out.println("2.  Change exempt limit");
 		System.out.println("3.  Change lower limit");
@@ -52,6 +54,7 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 		int choice = kb.nextInt();
 		switch(choice){
 			case 1:
+				//Print out all tax related rates
 				List<TaxBands> list_tax_bands = tax_bands_service.list_all();
 				for(TaxBands tax_band : list_tax_bands){
 					System.out.println("Exempt limit: " + tax_band.get_exempt_limit());
@@ -63,11 +66,38 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 				break;
 			
 			case 2:
-				System.out.println("Enter new tax exmept limit: ");
+				System.out.println("Enter new tax exempt limit: ");
 				double exempt_limit = kb.nextDouble();
-				TaxBands tax_bands = new TaxBandsImpl();
 				tax_bands.set_exempt_limit(exempt_limit);
 				tax_bands_service.update_exempt_limit(tax_bands);
+				break;
+			
+			case 3:
+				System.out.println("Enter new lower tax rate:");
+				double tax_rate = kb.nextDouble();
+				tax_bands.set_lower_rate(tax_rate);
+				tax_bands_service.update_lower_tax_rate(tax_bands);
+				break;
+				
+			case 4:
+				System.out.println("Enter new lower limit:");
+				double lower_limit = kb.nextDouble();
+				tax_bands.set_lower_limit(lower_limit);
+				tax_bands_service.update_lower_limit(tax_bands);
+				break;
+			
+			case 5:
+				System.out.println("Enter new higher tax rate:");
+				double higher_tax_rate = kb.nextDouble();
+				tax_bands.set_higher_rate(higher_tax_rate);
+				tax_bands_service.update_higher_tax_rate(tax_bands);
+				break;
+				
+			case 6:
+				System.out.println("Enter new solitary tax rate:");
+				double solitary_tax_rate = kb.nextDouble();
+				tax_bands.set_soloitary_rate(solitary_tax_rate);
+				tax_bands_service.update_solitary_tax_rate(tax_bands);
 				break;
 		}
 	}
