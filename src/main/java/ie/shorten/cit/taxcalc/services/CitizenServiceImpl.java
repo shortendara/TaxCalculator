@@ -22,18 +22,6 @@ public class CitizenServiceImpl implements CitizenService{
 	}
 
 	@Override
-	public Citizen get(int id) {
-		// TODO Auto-generated method stub
-		return citizen_repository.get_citizen(id);
-	}
-
-	@Override
-	public void remove(Citizen citizen) {
-		// TODO Auto-generated method stub
-		citizen_repository.delete(citizen);
-	}
-
-	@Override
 	public List<Citizen> find_all() {
 		// TODO Auto-generated method stub
 		return citizen_repository.find_all();

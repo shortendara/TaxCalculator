@@ -1,6 +1,7 @@
 package ie.shorten.cit.taxcalc.domain;
 
 import ie.shorten.cit.taxcalc.interfaces.Citizen;
+import ie.shorten.cit.taxcalc.interfaces.TaxBands;
 
 public class CitizenImpl implements Citizen {
 
@@ -41,7 +42,13 @@ public class CitizenImpl implements Citizen {
 
 	private void calculate_take_home_pay(double salary) {
 		// TODO Auto-generated method stub
-		double remaining_pay = salary;
+		TaxBands tax_bands = new TaxBandsImpl();
+		double exempt_limit = tax_bands.get_exempt_limit();
+		double lower_limit = tax_bands.get_lower_limit();
+		double lower_rate = tax_bands.get_lower_rate();
+		double higher_rate = tax_bands.get_higher_rate();
+		double solitary_rate = tax_bands.get_solitary_rate();
+		System.out.println(lower_limit);
 	}
 
 	@Override
