@@ -1,15 +1,19 @@
 package ie.shorten.cit.taxcalc.repository;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import ie.shorten.cit.taxcalc.interfaces.*;
 import ie.shorten.cit.taxcalc.rowmapper.TaxBandRowMapper;
 
+@Repository
 public class TaxBandRepositoryImpl implements TaxBandRepository {
 
 	private JdbcTemplate jdbc_template;
 	
+	@Autowired
 	public TaxBandRepositoryImpl(JdbcTemplate jdbc_template){
 		this.jdbc_template = jdbc_template;
 	}
