@@ -38,7 +38,8 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 	}
 	
 	public void change_rates(){
-		
+		System.out.print("1.  List all tax rates");
+		System.out.print("1.  List all tax rates");
 	}
 	
 	public void menu(){

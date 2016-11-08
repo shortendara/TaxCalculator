@@ -4,13 +4,14 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 import ie.shorten.cit.taxcalc.domain.*;
+import ie.shorten.cit.taxcalc.interfaces.TaxBands;
 
-public class TaxBandRowMapper implements RowMapper<TaxBandsImpl>{
+public class TaxBandRowMapper implements RowMapper<TaxBands>{
 
 	@Override
-	public TaxBandsImpl mapRow(ResultSet rs, int index) throws SQLException {
+	public TaxBands mapRow(ResultSet rs, int index) throws SQLException {
 		// TODO Auto-generated method stub
-		TaxBandsImpl tax_bands = new TaxBandsImpl();
+		TaxBands tax_bands = new TaxBandsImpl();
 		tax_bands.set_exempt_limit(rs.getDouble("excempt_tax_limit"));
 		tax_bands.set_lower_rate(rs.getDouble("lower_tax_rate"));
 		tax_bands.set_lower_limit(rs.getDouble("lower_tax_limit"));

@@ -14,6 +14,6 @@ public interface TaxBandRepository {
 	
 	public void update_solitary_taxrate(TaxBands tax_bands);
 	
-	public List list_all_tax_rates();
+	public List<TaxBands> list_all_tax_rates();
 	
 }

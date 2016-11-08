@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import ie.shorten.cit.taxcalc.interfaces.*;
+import ie.shorten.cit.taxcalc.rowmapper.TaxBandRowMapper;
 
 public class TaxBandRepositoryImpl implements TaxBandRepository {
 
@@ -48,13 +49,17 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 	@Override
 	public void update_solitary_taxrate(TaxBands tax_bands) {
 		// TODO Auto-generated method stub
-
+		String sql = "UPDATE tax_bands SET solitary_tax_rate = ?";
+		jdbc_template.update(sql, new Object[]{ tax_bands.get_solitary_rate() });
+		System.out.println("Higher tax rate has been changed");
 	}
 
 	@Override
-	public List list_all_tax_rates() {
+	public List<TaxBands> list_all_tax_rates() {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "Select * from tax_bands";
+		List<TaxBands> tax_bands = jdbc_template.query(sql, new TaxBandRowMapper());
+		return tax_bands;
 	}
 
 }
