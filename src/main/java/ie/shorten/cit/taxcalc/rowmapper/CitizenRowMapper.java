@@ -4,13 +4,14 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 import ie.shorten.cit.taxcalc.domain.*;
+import ie.shorten.cit.taxcalc.interfaces.*;
 
-public class CitizenRowMapper implements RowMapper<CitizenImpl>{
+public class CitizenRowMapper implements RowMapper<Citizen>{
 
 	@Override
-	public CitizenImpl mapRow(ResultSet rs, int index) throws SQLException {
+	public Citizen mapRow(ResultSet rs, int index) throws SQLException {
 		// TODO Auto-generated method stub
-		CitizenImpl citizen = new CitizenImpl();  
+		Citizen citizen = new CitizenImpl();  
 		citizen.set_name(rs.getString("name"));
 		citizen.set_salary(rs.getDouble("salary"));
 		return citizen;

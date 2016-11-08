@@ -20,9 +20,9 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 	Scanner kb;
 	public void list_all_citizens(){
 		List<Citizen> citizen_list = citizen_service.find_all();
+		System.out.println("Name:		Salary:        Take home pay:");
 		for(Citizen citizen : citizen_list){
-			System.out.println(citizen.get_name());
-			System.out.println(citizen.get_salary());
+			System.out.println(citizen.get_name()  + "    " + citizen.get_salary());
 		}
 	}
 	
@@ -53,12 +53,15 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 				case 1:
 					//List all citizens and their pay
 					list_all_citizens();
+					break;
 				case 2:
 					//Enter a new citizen
 					add_citizen();
+					break;
 				case 3:
 					//Change tax rates
-					
+					change_rates();
+					break;
 				case 4:
 					//Exit
 					System.exit(0);

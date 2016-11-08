@@ -18,5 +18,4 @@ public class TaxBandRowMapper implements RowMapper<TaxBandsImpl>{
 		tax_bands.set_soloitary_rate(rs.getDouble("solitary_tax_rate"));
 		return tax_bands;
 	}
-
 }

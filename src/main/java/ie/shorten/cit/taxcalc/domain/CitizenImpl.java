@@ -58,27 +58,9 @@ public class CitizenImpl implements Citizen {
 	}
 
 	@Override
-	public void set_take_home_pay(double salary) {
+	public void set_take_home_pay(double take_home_pay) {
 		// TODO Auto-generated method stub
-		double remaining_pay = salary;
-		double tax_deducted = 0;
-		if(salary <= 10000){
-			//For salary below 10000 apply solidarity tax
-			take_home_pay = (salary * 0.97);
-		}else{
-			//First 10000 exempt from tax
-			remaining_pay = (remaining_pay - 10000);
-			//Calculate tax deducted on pay less then 25000
-			if(remaining_pay <= 15000){
-				//Calculate salary @20% tax
-				remaining_pay = (remaining_pay * 0.8);
-				//Calculate solidarity tax
-				tax_deducted = (salary * 0.03);
-				take_home_pay = (remaining_pay - tax_deducted);
-			}else{
-				
-			}
-		}
+		this.take_home_pay = take_home_pay;
 	}
 
 	@Override

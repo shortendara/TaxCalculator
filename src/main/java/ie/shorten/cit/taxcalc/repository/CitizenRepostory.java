@@ -59,8 +59,8 @@ public class CitizenRepostory implements CitizenRepository{
 	public List<Citizen> find_all() {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM citizens";
-		//List<Citizen> citizens  = jdbc_template.query(sql, new CitizenRowMapper());
-		return null;
+		List<Citizen> citizens  = jdbc_template.query(sql, new CitizenRowMapper());
+		return citizens;
 	}
 
 }
