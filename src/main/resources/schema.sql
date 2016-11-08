@@ -1,11 +1,9 @@
 CREATE TABLE  tax_bands(
-	tax_rate_id int(11) NOT NULL,
 	excempt_tax_limit float,
 	lower_tax_rate float,
 	lower_tax_limit float,
 	higher_tax_rate float,
-	solitary_tax_rate float,
-	PRIMARY KEY(tax_rate_id)
+	solitary_tax_rate float
 );
 
 CREATE TABLE citizens(
