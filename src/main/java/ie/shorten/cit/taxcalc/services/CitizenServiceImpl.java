@@ -29,7 +29,6 @@ public class CitizenServiceImpl implements CitizenService{
 	public void save(Citizen citizen) {
 		// TODO Auto-generated method stub
 		set_take_home_salary(citizen);
-		System.out.println(citizen.get_take_home_pay());
 		citizen_repository.save(citizen);
 	}
 	

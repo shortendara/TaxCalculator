@@ -22,8 +22,8 @@ public class CitizenRepostory implements CitizenRepository{
 	public void save(Citizen citizen) {
 		// TODO Auto-generated method stub
 		System.out.println("Take home pay:" + citizen.get_take_home_pay());
-		String sql = "INSERT INTO citizens(name, salary) VALUES(?, ?)";
-		jdbc_template.update(sql, new Object[]{citizen.get_name(), citizen.get_salary()});
+		String sql = "INSERT INTO citizens(name, salary, take_home_pay) VALUES(?, ?, ?)";
+		jdbc_template.update(sql, new Object[]{citizen.get_name(), citizen.get_salary(), citizen.get_take_home_pay()});
 		System.out.println("Inserted citizen");
 	}
 
