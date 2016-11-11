@@ -28,6 +28,7 @@ public class CitizenServiceImpl implements CitizenService{
 	private void set_take_home_salary(Citizen citizen){
 		double salary = citizen.get_salary();
 		
+		
 	}
 
 	@Override
