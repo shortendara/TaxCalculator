@@ -27,8 +27,8 @@ public class CitizenServiceImpl implements CitizenService{
 	
 	private void set_take_home_salary(Citizen citizen){
 		double salary = citizen.get_salary();
-		
-		
+		double exempt_limit = tax_bands_service.get_exempt_limit();
+		System.out.println(exempt_limit);
 	}
 
 	@Override
