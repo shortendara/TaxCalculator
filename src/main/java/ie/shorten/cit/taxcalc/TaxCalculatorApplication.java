@@ -76,7 +76,7 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 				System.out.println("Enter new lower tax rate:");
 				double tax_rate = kb.nextDouble();
 				tax_bands.set_lower_rate(tax_rate);
-				tax_bands_service.update_lower_tax_rate(tax_bands);
+				tax_bands_service.update_lower_taxrate(tax_bands);
 				break;
 				
 			case 4:
@@ -90,14 +90,14 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 				System.out.println("Enter new higher tax rate:");
 				double higher_tax_rate = kb.nextDouble();
 				tax_bands.set_higher_rate(higher_tax_rate);
-				tax_bands_service.update_higher_tax_rate(tax_bands);
+				tax_bands_service.update_higher_taxrate(tax_bands);
 				break;
 				
 			case 6:
 				System.out.println("Enter new solitary tax rate:");
 				double solitary_tax_rate = kb.nextDouble();
 				tax_bands.set_soloitary_rate(solitary_tax_rate);
-				tax_bands_service.update_solitary_tax_rate(tax_bands);
+				tax_bands_service.update_solitary_taxrate(tax_bands);
 				break;
 		}
 	}

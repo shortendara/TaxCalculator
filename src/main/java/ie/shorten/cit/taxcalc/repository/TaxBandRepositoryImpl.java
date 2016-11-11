@@ -29,7 +29,8 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 	@Override
 	public double get_exempt_limit() {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "Select excempt_tax_limit FROM tax_bands";
+		return jdbc_template.queryForObject(sql, Double.class);
 	}
 
 	@Override
@@ -43,7 +44,8 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 	@Override
 	public double get_lower_limit() {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "Select lower_tax_limit FROM tax_bands";
+		return jdbc_template.queryForObject(sql, Double.class);
 	}
 
 	@Override
@@ -57,7 +59,8 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 	@Override
 	public double get_lower_taxrate() {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "Select lower_tax_rate FROM tax_bands";
+		return jdbc_template.queryForObject(sql, Double.class);
 	}
 
 	@Override
@@ -71,7 +74,8 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 	@Override
 	public double get_higher_taxrate() {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "Select higher_tax_rate FROM tax_bands";
+		return jdbc_template.queryForObject(sql, Double.class);
 	}
 
 	@Override
@@ -85,7 +89,8 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 	@Override
 	public double get_solitary_taxrate() {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "Select solitary_tax_rate FROM tax_bands";
+		return jdbc_template.queryForObject(sql, Double.class);
 	}
 
 	@Override
