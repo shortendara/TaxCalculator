@@ -14,7 +14,7 @@ public interface TaxBandRepository {
 	
 	public void update_lower_taxrate(TaxBands tax_bands);
 	
-	public double get_lower_tax_rate();
+	public double get_lower_taxrate();
 	
 	public void update_higher_taxrate(TaxBands tax_bands);
 	
@@ -22,8 +22,8 @@ public interface TaxBandRepository {
 	
 	public void update_solitary_taxrate(TaxBands tax_bands);
 	
-	public double get_solitary_tax_rate();
+	public double get_solitary_taxrate();
 	
-	public List<TaxBands> list_all_tax_rates();
+	public List<TaxBands> list_all_taxrates();
 	
 }

@@ -25,6 +25,12 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 		jdbc_template.update(sql, new Object[]{ tax_bands.get_exempt_limit() });
 		System.out.println("Exempt limit has been changed");
 	}
+	
+	@Override
+	public double get_exempt_limit() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	@Override
 	public void update_lower_limit(TaxBands tax_bands) {
@@ -32,6 +38,12 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 		String sql = "UPDATE tax_bands SET lower_tax_limit = ?";
 		jdbc_template.update(sql, new Object[]{ tax_bands.get_lower_limit() });
 		System.out.println("Lower limit has been changed");
+	}
+	
+	@Override
+	public double get_lower_limit() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
@@ -41,6 +53,12 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 		jdbc_template.update(sql, new Object[]{ tax_bands.get_lower_rate() });
 		System.out.println("Lower tax rate has been changed");
 	}
+	
+	@Override
+	public double get_lower_taxrate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	@Override
 	public void update_higher_taxrate(TaxBands tax_bands) {
@@ -48,6 +66,12 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 		String sql = "UPDATE tax_bands SET higher_tax_rate = ?";
 		jdbc_template.update(sql, new Object[]{ tax_bands.get_higher_rate() });
 		System.out.println("Higher tax rate has been changed");
+	}
+	
+	@Override
+	public double get_higher_taxrate() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
@@ -57,13 +81,18 @@ public class TaxBandRepositoryImpl implements TaxBandRepository {
 		jdbc_template.update(sql, new Object[]{ tax_bands.get_solitary_rate() });
 		System.out.println("Higher tax rate has been changed");
 	}
+	
+	@Override
+	public double get_solitary_taxrate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	@Override
-	public List<TaxBands> list_all_tax_rates() {
+	public List<TaxBands> list_all_taxrates() {
 		// TODO Auto-generated method stub
 		String sql = "Select * from tax_bands";
 		List<TaxBands> tax_bands = jdbc_template.query(sql, new TaxBandRowMapper());
 		return tax_bands;
 	}
-
 }
