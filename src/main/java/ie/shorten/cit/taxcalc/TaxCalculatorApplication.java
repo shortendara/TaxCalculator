@@ -27,7 +27,7 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 		List<Citizen> citizen_list = citizen_service.find_all();
 		System.out.println("Name:		Salary:        Take home pay:");
 		for(Citizen citizen : citizen_list){
-			System.out.println(citizen.get_name()  + "    " + citizen.get_salary() + "\n");
+			System.out.println(citizen.get_name()  + "    " + citizen.get_salary() + "     " + citizen.get_take_home_pay() + "\n");
 		}
 	}
 	
