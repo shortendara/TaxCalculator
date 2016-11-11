@@ -29,6 +29,7 @@ public class CitizenServiceImpl implements CitizenService{
 	public void save(Citizen citizen) {
 		// TODO Auto-generated method stub
 		set_take_home_salary(citizen);
+		System.out.println(citizen.get_take_home_pay());
 		citizen_repository.save(citizen);
 	}
 	
@@ -40,15 +41,30 @@ public class CitizenServiceImpl implements CitizenService{
 		higher_taxrate = tax_bands_service.get_higher_taxrate();
 		solitary_taxrate = tax_bands_service.get_solitary_rate();
 		take_home_pay = 0;
+		double total_deducted = 0;
 		
-		//Apply solitary rate to people under 10000
 		if(salary <= 10000){
+			//Apply solitary rate to people under 10000
 			take_home_pay = (salary/100) * solitary_taxrate;
 			citizen.set_take_home_pay(take_home_pay);
 		}else{
 			//Manipulate remaining to calculate tax 
 			double remaining = salary;
+			//Remove exempt limit from salary
 			remaining -= exempt_limit;
+			if(remaining < lower_taxlimit){
+				//Calculate tax on remaining salary
+				total_deducted = (remaining / 100) * lower_taxrate;
+			}else{
+				//Calculate tax on next band
+				total_deducted = (remaining / 100) * lower_taxrate;
+				remaining = (remaining - lower_taxlimit);
+				//Calculate tax on remaining salary
+				total_deducted += (remaining /100) * higher_taxrate;
+			}
+			//Apply solitary tax rate on salaries over exempt limit
+			total_deducted += (salary / 100) * solitary_taxrate;
+			citizen.set_take_home_pay(salary - total_deducted);
 		}
 	}
 
