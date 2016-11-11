@@ -37,7 +37,6 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 		System.out.println("Enter citizen salary: ");
 		double salary = kb.nextDouble();
 		Citizen citizen = new CitizenImpl(name, salary);
-		
 		//Use service class to add citizen to database
 		citizen_service.save(citizen);
 	}

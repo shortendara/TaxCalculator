@@ -21,7 +21,7 @@ public class CitizenRepostory implements CitizenRepository{
 	@Override
 	public void save(Citizen citizen) {
 		// TODO Auto-generated method stub
-		System.out.println(citizen.get_take_home_pay());
+		System.out.println("Take home pay:" + citizen.get_take_home_pay());
 		String sql = "INSERT INTO citizens(name, salary) VALUES(?, ?)";
 		jdbc_template.update(sql, new Object[]{citizen.get_name(), citizen.get_salary()});
 		System.out.println("Inserted citizen");

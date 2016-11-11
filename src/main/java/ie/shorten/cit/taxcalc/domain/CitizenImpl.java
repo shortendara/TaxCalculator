@@ -36,19 +36,7 @@ public class CitizenImpl implements Citizen {
 	@Override
 	public void set_salary(double salary) {
 		// TODO Auto-generated method stub
-		calculate_take_home_pay(salary);
 		this.salary = salary;
-	}
-
-	private void calculate_take_home_pay(double salary) {
-		// TODO Auto-generated method stub
-		TaxBands tax_bands = new TaxBandsImpl();
-		double exempt_limit = tax_bands.get_exempt_limit();
-		double lower_limit = tax_bands.get_lower_limit();
-		double lower_rate = tax_bands.get_lower_rate();
-		double higher_rate = tax_bands.get_higher_rate();
-		double solitary_rate = tax_bands.get_solitary_rate();
-		System.out.println(lower_limit);
 	}
 
 	@Override

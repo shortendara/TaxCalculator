@@ -13,6 +13,13 @@ public class CitizenServiceImpl implements CitizenService{
 	CitizenRepository citizen_repository;
 	@Autowired
 	TaxBandsService tax_bands_service;
+	private double salary;
+	private double exempt_limit;
+	private double lower_taxrate;
+	private double lower_taxlimit;
+	private double higher_taxrate;
+	private double solitary_taxrate;
+	private double take_home_pay;
 	
 	public CitizenServiceImpl(CitizenRepository citizen_repository){
 		this.citizen_repository = citizen_repository;
@@ -26,9 +33,23 @@ public class CitizenServiceImpl implements CitizenService{
 	}
 	
 	private void set_take_home_salary(Citizen citizen){
-		double salary = citizen.get_salary();
-		double exempt_limit = tax_bands_service.get_exempt_limit();
-		System.out.println(exempt_limit);
+		salary = citizen.get_salary();
+		exempt_limit = tax_bands_service.get_exempt_limit();
+		lower_taxrate = tax_bands_service.get_lower_taxrate();
+		lower_taxlimit = tax_bands_service.get_lower_limit();
+		higher_taxrate = tax_bands_service.get_higher_taxrate();
+		solitary_taxrate = tax_bands_service.get_solitary_rate();
+		take_home_pay = 0;
+		
+		//Apply solitary rate to people under 10000
+		if(salary <= 10000){
+			take_home_pay = (salary/100) * solitary_taxrate;
+			citizen.set_take_home_pay(take_home_pay);
+		}else{
+			//Manipulate remaining to calculate tax 
+			double remaining = salary;
+			remaining -= exempt_limit;
+		}
 	}
 
 	@Override
