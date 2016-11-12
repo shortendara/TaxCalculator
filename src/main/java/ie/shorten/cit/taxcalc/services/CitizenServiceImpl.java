@@ -44,8 +44,8 @@ public class CitizenServiceImpl implements CitizenService{
 		
 		if(salary <= 10000){
 			//Apply solitary rate to people under 10000
-			take_home_pay = (salary/100) * solitary_taxrate;
-			citizen.set_take_home_pay(take_home_pay);
+			total_deducted = (salary/100) * solitary_taxrate;
+			citizen.set_take_home_pay(salary - total_deducted);
 		}else{
 			//Manipulate remaining to calculate tax 
 			double remaining = salary;
