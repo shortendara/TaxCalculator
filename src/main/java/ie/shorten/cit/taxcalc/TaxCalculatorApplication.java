@@ -33,8 +33,8 @@ public class TaxCalculatorApplication implements CommandLineRunner{
 	
 	public void add_citizen(){
 		System.out.println("Enter Citizen name: ");
-		String name = kb.next();
 		kb.nextLine();
+		String name = kb.nextLine();
 		System.out.println("Enter citizen salary: ");
 		double salary = kb.nextDouble();
 		Citizen citizen = new CitizenImpl(name, salary);
